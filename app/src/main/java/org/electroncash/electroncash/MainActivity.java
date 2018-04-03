@@ -8,6 +8,8 @@ import android.os.Environment;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ElectronRpc electronRpc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         serviceIntent.putExtra("androidExtDir", Environment.getExternalStorageDirectory().getPath() + "/" + BuildConfig.APPLICATION_ID);
         serviceIntent.putExtra("androidDataDir", getFilesDir().getPath() + "/data");
         this.startService(serviceIntent);
+        this.electronRpc = new ElectronRpc(getFilesDir().getPath() + "/data");
+        this.electronRpc.printVersion();
+        //PythonInterface.runCommand("print('hello')");
     }
 
     public String getAppRoot() {

@@ -298,4 +298,20 @@ JNIEXPORT void JNICALL Java_org_kivy_android_PythonService_nativeStart(
   main(1, argv);
 }
 
+JNIEXPORT void JNICALL Java_org_electroncash_electroncash_PythonInterface_runCommand(
+    JNIEnv *env, jobject j_this, jstring j_command) {
+    jboolean iscopy;
+    const char *command =
+        (*env)->GetStringUTFChars(env, j_command, &iscopy);
+
+    LOGP(command);
+
+    LOGP("1");
+    //Py_Initialize();
+    LOGP("2");
+    //PyEval_InitThreads();
+    LOGP("3");
+    PyRun_SimpleString(command);
+}
+
 #endif

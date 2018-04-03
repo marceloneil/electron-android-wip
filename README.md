@@ -27,9 +27,10 @@ ndk.dir=/path/to/crystax-ndk/
   - [ ] Cryptodomex
   - [ ] Python 3
 - [ ] JSON-RPC
-  - [ ] Java Library
+  - [x] Java Library
   - [ ] Authentication
 - [ ] Engine
-  - [ ] [Environment variable patches](https://github.com/fyookball/electrum/pull/559)
+  - [x] [Environment variable patches](https://github.com/fyookball/electrum/pull/559)
+- [ ] Tests
 - [ ] UI
 
